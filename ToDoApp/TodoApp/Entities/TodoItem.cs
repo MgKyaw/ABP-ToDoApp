@@ -1,5 +1,8 @@
-﻿namespace TodoApp.Entities;
+﻿using Volo.Abp.Domain.Entities;
 
-public class TodoItem
+namespace TodoApp.Entities;
+
+public class TodoItem : BasicAggregateRoot<Guid>
 {
+    public string Text { get; set; } = string.Empty;
 }
