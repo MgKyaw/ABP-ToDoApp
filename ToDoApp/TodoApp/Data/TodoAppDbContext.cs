@@ -43,6 +43,13 @@ public class TodoAppDbContext : AbpDbContext<TodoAppDbContext>
         builder.ConfigureTenantManagement();
 
         /* Configure your own entities here */
+
+        /* Configure your own tables/entities inside here */
+        builder.Entity<TodoItem>(b =>
+        {
+            b.ToTable("TodoItems");
+        });
+
     }
 }
 
