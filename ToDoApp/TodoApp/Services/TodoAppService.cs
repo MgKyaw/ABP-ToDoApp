@@ -25,4 +25,17 @@ public class TodoAppService : TodoAppAppService
             }).ToList();
     }
 
+    public async Task<TodoItemDto> CreateAsync(string text)
+    {
+        var todoItem = await _todoItemRepository.InsertAsync(
+            new TodoItem { Text = text }
+        );
+
+        return new TodoItemDto
+        {
+            Id = todoItem.Id,
+            Text = todoItem.Text
+        };
+    }
+
 }
