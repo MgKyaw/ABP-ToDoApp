@@ -38,4 +38,9 @@ public class TodoAppService : TodoAppAppService
         };
     }
 
+    public async Task DeleteAsync(Guid id)
+    {
+        await _todoItemRepository.DeleteAsync(id);
+    }
+
 }
